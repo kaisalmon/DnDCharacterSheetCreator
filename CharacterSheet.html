@@ -1,0 +1,165 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="CharacterSheet.css">
+		<script src="scripts.js"></script>
+	</head>
+	<body>
+		<div id="characterSheet">
+			<h1><span id="name" class="title">Rogie - Halfing Fighter</span></h1>
+			<div class="section empty">
+				Tools: <span id="export_button" class="button">export</span>
+				<span id="import_button" class="button">import</span>
+				<span id="clear_button" class="button">clear</span>
+			</div>
+			<div id="mainSection">
+				<div id="leftBar">
+					<div class="section">
+						<h2>Abilities</h2>
+						<table>
+							<tr>
+								<td>Strength<span id="strength_saving_throw">*</span>:</td>
+								<td>
+									<b id="strength_bonus">
+										+0
+									</b> 
+									(<span id="strength">10</span>)
+								</td>
+							</tr>
+							<tr>
+								<td>Dexterity<span id="dexterity_saving_throw">*</span>:</td>
+								<td>
+									<b id="dexterity_bonus">
+										+0
+									</b> 
+									(<span id="dexterity">10</span>)
+								</td>
+							</tr>
+							<tr>
+								<td>Constituion<span id="constituion_saving_throw"></span>:</td>
+								<td>
+									<b id="constituion_bonus">
+										+0
+									</b> 
+									(<span id="constituion">10</span>)
+								</td>
+							</tr>
+							<tr>
+								<td>Wisdom<span id="wisdom_saving_throw"></span>:</td>
+								<td>
+									<b id="wisdom_bonus">
+										+0
+									</b> 
+									(<span id="wisdom">10</span>)
+								</td>
+							</tr>
+							<tr>
+								<td>Intelligence<span id="intelligence_saving_throw"></span>:</td>
+								<td>
+									<b id="intelligence_bonus">
+										+0
+									</b> 
+									(<span id="intelligence">10</span>)
+								</td>
+							</tr>
+							<tr>
+								<td>Charisma<span id="charisma_saving_throw"></span>:</td>
+								<td>
+									<b id="charisma_bonus">
+										+0
+									</b> 
+									(<span id="charisma">10</span>)
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="section">
+						<h2>Proficiencies (<span id="prof_copy">+2</span>)</h2>
+						<ul>
+							<li><b>Weapons:</b> <span id="weapon_proficiencies">Simple and Martial Weapons</span></li>
+							<li><b>Armor:</b><span id="armor_proficiencies">Light Armor, Medium and heavy Armor, and Shields</span></li>
+							<li>
+								<b>Saving Throws:</b>
+								<span id="saving_throw_proficiencies">Dexterity, Strength</span> 
+							</li>
+							<li>
+								<b>Skills:</b>
+								<span id="skill_proficiencies">Intimidation, Athletics</span> 
+							</li>
+						</ul>
+					</div>
+					<div class="section" id ="actions_section" >
+						<h2>Actions<span class="button" id="actions_add">+</span></h2>
+						<div id="actions">
+
+						</div>
+						<div class="subsection">
+							<h3>Other Actions</h3>
+							<ul>
+								<li><b>Dash:</b> Move your Speed</li>
+								<li><b>Disengage:</b> Move 5ft without provoking "Attacks of Opportunity"</li>
+								<li><b>Dodge:</b> Until next turn, opponents have disadvantage  to attack you, and you gain advantage for dexterity saving throws. </li>
+								<li><b>Help:</b> Give ally advantage on a particular check (including attack roll)</li>
+								<li><b>Hide:</b> If you are out of sight, you can take a stealth (dexterity) check to hide from opponents</li>
+								<li><b>Improvised Action:</b> Anything you can reasonably try which isn't described above!</li>
+							</ul>
+						</div>
+					</div>
+					<div class="section" id="reactions_section">
+						<h2>Reactions<span class="button" id="reactions_add">+</span></h2>
+						<div id="reactions">
+
+						</div>
+						<div class="subsection">
+							<h3>Other Reactions</h3>
+							<ul>
+								<li><b>Opportunity Attack:</b> Make an attack against an enemy which has moved out of your reach without using the <b>disengage</b> action.</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="section empty" id="bonus_actions_section">
+						<h2>Bonus Actions<span class="button" id="bonus_actions_add">+</span></h2>
+						<div id="bonus_actions">
+
+						</div>
+					</div>
+
+				</div>
+				<div id="rightBar">
+					<div class="section">
+						<div class="coreInfo">
+							<h2>Armor Class</h2>
+							<div class="bigNumber" id="armor_class">
+								15
+							</div>
+							<div class="extraInfo" id="armor_equiped">
+								(Chain Shirt + Shield)
+							</div>
+						</div>
+						<div class="coreInfo">
+							<h2>Hit Points</h2>
+							<div class="bigNumber" id="hit_points">
+								12
+							</div>
+							<div class="extraInfo" id="hit_die">
+								1 x d10 Hit Die
+							</div>
+						</div>
+						<div class="coreInfo">
+							<h2>Proficiency</h2>
+							<div class="bigNumber" id="proficiency">
+								+2
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="application/json" id="default_character">
+		  {"name":"Example Character - Dwarven Cleric","armor_class":"18","armor_equiped":"(Chain mail + Shield)","hit_points":"11","hit_die":"1 x d8 Hit Die","proficiency":"+2","weapon_proficiencies":"Battleaxe, Handaxe, Light Hammer, Warhammer and all Simple Weapons","armor_proficiencies":"Light, Medium & Heavy Armor, and Shields","saving_throw_proficiencies":"Wisdom, Charisma","skill_proficiencies":"Smith's Tools, History, Religion","strength":"14","dexterity":"12","constituion":"15","wisdom":"16","charisma":"8","intelligence":"10","racial_features":[{"name":"Dwarven Resilience","description":"You have advantage on saving throws against poison, and you have resistance against poison damage.\n"},{"name":"Stonecunning","description":"Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.\n"},{"name":"Dwarven Toughness","description":"You gain gain one extra hitpoint, and one more each time you gain a level"}],"background_features":[{"name":"Shelter of the Faithful","description":"You command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells.\n Those who share your religion will support you (but only you) at a modest lifestyle.\n"}],"actions":[{"name":"Warhammer","info":[{"name":"Attack Bonus","data":"+4"},{"name":"Damage","data":"1d8+2"}]},{"name":"Spellcasting","info":[{"name":"Attack Bonus","data":"+5"},{"name":"Save DC","data":"13"},{"name":"Sacred Flame Damage","data":"1d8"},{"name":"1st level spells per day","data":"2"},{"name":"Max Spells Prepared","data":"4"},{"name":"Guiding Bolt Damage","data":"4d6"},{"name":"Cure Wounds Healing","data":"1d8 + 6"}]}],"bonus_actions":[],"reactions":[]}
+		</script>
+		<script type="application/json" id="blank_character">
+		{"name":"Unnamed Character","armor_class":"10","armor_equiped":"(No Armor)","hit_points":"8","hit_die":"1 x d8 Hit Die","proficiency":"+2","weapon_proficiencies":"None","armor_proficiencies":"None","saving_throw_proficiencies":"None","skill_proficiencies":"None","strength":"10","dexterity":"10","constituion":"10","wisdom":"10","charisma":"10","intelligence":"10","racial_features":[],"background_features":[],"actions":[],"bonus_actions":[],"reactions":[],"class_features":[]}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,151 @@
+body{
+	font-family: Rockwell;
+	padding:0;
+	margin:0;
+	font-size: 15px;
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+input, select, textarea, button{font-family:inherit;}
+
+h1,h2,h3, .title{
+	text-align: center;
+	margin: 0;
+}
+
+h1, .title{
+	margin-bottom: 1cm;
+	font-size: 32px;
+}
+
+h2{
+	font-size: 20px;
+}
+
+h3{
+	font-size: 18px;
+}
+
+div, table, ul{
+	/*border: red solid 1px;*/
+	padding:0;
+	margin:0;
+}
+
+tr:nth-child(2n){
+	background-color: #DDD;
+}
+
+td:nth-child(2n){
+	width:30%;
+}
+
+ul ul li{
+	list-style-type: circle;
+}
+
+table{
+	width:95%;
+	font-size: 15px;
+	border-collapse: collapse;
+}
+
+td:first-child{
+	font-weight: bold;
+}
+
+td:not(:first-child){
+	text-align: center;
+}
+
+.button{
+	display: none;
+	padding: 1px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin:3px;
+	background: #DDD;
+	border-radius: 20px;
+	color: rgba(0,0,0,0.5);
+	border:solid 1px rgba(0,0,0,0.5);
+	font-size: 70%;
+}
+
+.button:hover{
+	cursor: pointer;
+	color: black;
+	border:solid 1px black;
+}
+
+.section:hover .button{
+	display: inline;
+}
+
+#characterSheet{
+	width:21cm;
+	height:29.7cm;
+	border: black solid 1px;
+	padding:0.65cm;
+}
+
+#mainSection{
+	position:relative;
+}
+
+#leftBar{
+	width: 8cm;
+}
+
+#leftBar ul{
+	list-style-type: none;
+}
+
+#rightBar ul{
+	list-style-type: square;
+	margin-left:0.5cm; 
+}
+
+#rightBar{
+	width: 13cm;
+	position: absolute;
+	top:0px;
+	left: 7.5cm;
+	padding-left: 1cm;
+}
+
+.section{
+	padding-top:0.25cm;
+	padding-bottom:0.25cm;
+}
+.subsection{
+	padding-top:0.15cm;
+	padding-bottom:0.15cm;
+}
+
+.coreInfo{
+	display:inline-block;
+	vertical-align: top;
+	width:32%;
+	font-weight: bold;
+}
+.coreInfo > *{
+	text-align: center;
+}
+.bigNumber{
+	font-size: 50px;
+}
+
+.empty{
+	size:25%;
+	display: none;
+	color:gray;
+}
+
+div:hover .empty{
+	size:100%;
+	display: inherit;
+}
