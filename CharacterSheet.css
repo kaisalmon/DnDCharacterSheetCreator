@@ -88,7 +88,7 @@ td:not(:first-child){
 #characterSheet{
 	width:21cm;
 	height:29.7cm;
-	border: black solid 1px;
+	border: white solid 1px;
 	padding:0.65cm;
 }
 
@@ -148,4 +148,10 @@ td:not(:first-child){
 div:hover .empty{
 	size:100%;
 	display: inherit;
+}
+
+.notes{
+	padding-top:3px;
+	padding-left:7px;
+	font-size:80%;
 }
