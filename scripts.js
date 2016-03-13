@@ -18,6 +18,7 @@ function make_editable_factory(e, id, type, callback){
 	return function(){
 		var field = document.createElement("input");
 		field.className = e.className;
+		field.id = e.id;
 		e.parentNode.insertBefore(field, e);
 		field.value = e.innerHTML.trim();
 		field.style.width = Math.max(20,e.offsetWidth*1.1);
@@ -31,7 +32,8 @@ function make_editable_factory(e, id, type, callback){
 function revert_to_text_factory(e, id, type, callback){
 	return function(){
 		var text = document.createElement(type);
-		text.className = e.className;				
+		text.className = e.className;	
+		text.id = e.id;			
 		if(e.value.trim() == "")
 			e.value = "???";
 		text.innerHTML = e.value.trim();
@@ -315,6 +317,16 @@ function set_action_set(id){
 	btn.onclick = function(){
 		add_action(id, "Action","Info","???");
 	};
+	set_editable(id+"_notes",function(string){
+		if(!string || string == '' || string == '???'){
+			document.getElementById(id+"_notes").innerHTML = 'notes...';
+			document.getElementById(id+"_notes").className = '';
+			document.getElementById(id+"_notes").className = 'notes empty';
+		}else{
+			document.getElementById(id+"_notes").className = '';
+			document.getElementById(id+"_notes").className = 'notes';
+		}
+	});
 }
 
 function add_action(id, name, info_name, data){
@@ -440,11 +452,17 @@ window.onload = function(){
 	set_action_set("reactions");
 
 	document.getElementById("export_button").onclick = function(){
-		window.prompt("Your Character:",JSON.stringify(json_output));
+		document.getElementById('export_popup').className = 'popup';
+		document.getElementById('export').value = JSON.stringify(json_output);
 	}
 
 	document.getElementById("import_button").onclick = function(){
 		load_from_json(window.prompt("Enter Valid JSON character data:"));
+	}
+
+	document.getElementById("import_close").onclick = function(){
+		document.getElementById('export_popup').className = 'popup closed';
+		
 	}
 
 	document.getElementById("clear_button").onclick = function(){

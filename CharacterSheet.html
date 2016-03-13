@@ -93,6 +93,9 @@
 						<div id="actions">
 
 						</div>
+						<div id="actions_notes" class="empty notes">
+							Notes...
+						</div>
 						<div class="subsection">
 							<h3>Other Actions</h3>
 							<ul>
@@ -110,6 +113,9 @@
 						<div id="reactions">
 
 						</div>
+						<div id="reactions_notes" class="empty notes">
+							Notes...
+						</div>
 						<div class="subsection">
 							<h3>Other Reactions</h3>
 							<ul>
@@ -121,7 +127,10 @@
 					<div class="section empty" id="bonus_actions_section">
 						<h2>Bonus Actions<span class="button" id="bonus_actions_add">+</span></h2>
 						<div id="bonus_actions">
-
+							
+						</div>
+						<div id="bonus_actions_notes" class="empty notes">
+							Notes...
 						</div>
 					</div>
 
@@ -155,6 +164,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class='popup closed' id='export_popup'>
+			<span class='button' id='import_close'>Close</span>
+			<textarea id='export'></textarea>
 		</div>
 		<script type="application/json" id="default_character">
 		  {"name":"Example Character - Dwarven Cleric","armor_class":"18","armor_equiped":"(Chain mail + Shield)","hit_points":"11","hit_die":"1 x d8 Hit Die","proficiency":"+2","weapon_proficiencies":"Battleaxe, Handaxe, Light Hammer, Warhammer and all Simple Weapons","armor_proficiencies":"Light, Medium & Heavy Armor, and Shields","saving_throw_proficiencies":"Wisdom, Charisma","skill_proficiencies":"Smith's Tools, History, Religion","strength":"14","dexterity":"12","constituion":"15","wisdom":"16","charisma":"8","intelligence":"10","racial_features":[{"name":"Dwarven Resilience","description":"You have advantage on saving throws against poison, and you have resistance against poison damage.\n"},{"name":"Stonecunning","description":"Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.\n"},{"name":"Dwarven Toughness","description":"You gain gain one extra hitpoint, and one more each time you gain a level"}],"background_features":[{"name":"Shelter of the Faithful","description":"You command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells.\n Those who share your religion will support you (but only you) at a modest lifestyle.\n"}],"actions":[{"name":"Warhammer","info":[{"name":"Attack Bonus","data":"+4"},{"name":"Damage","data":"1d8+2"}]},{"name":"Spellcasting","info":[{"name":"Attack Bonus","data":"+5"},{"name":"Save DC","data":"13"},{"name":"Sacred Flame Damage","data":"1d8"},{"name":"1st level spells per day","data":"2"},{"name":"Max Spells Prepared","data":"4"},{"name":"Guiding Bolt Damage","data":"4d6"},{"name":"Cure Wounds Healing","data":"1d8 + 6"}]}],"bonus_actions":[],"reactions":[]}
